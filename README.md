@@ -1,5 +1,5 @@
-## Demonstration of [react-redux-form issue #592](https://github.com/davidkpiano/react-redux-form/issues/592)
+## Demonstration of a grid component in react-redux-form
 
-This is a minimal app, based on the [very first example in the react-redux-form docs](https://davidkpiano.github.io/react-redux-form/docs.html). It demonstrates that, for two identical components, the form event handlers are triggered on updates only within the component that is not connected to a [redux](https://github.com/reactjs/react-redux/) store.
+This is a minimal app, built to demonstrate a difficulty the author has experienced with array-based grids based on react-redux-form.
 
-The demo can be run using `npm install && npm start`. The browser should then open, and show two sets username/password fields. Both represent the same component, however the first has been connected to a redux store using [connect](https://github.com/reactjs/redux/blob/master/docs/basics/UsageWithReact.md#implementing-container-components), making it a container component. By typing in both sets of fields, you should see that the data below is updated only on the bottom, unconnected, copy, but not on the first, which differs merely by its wrapper.
+The demo can be run using `npm install && npm start`. The browser should then open, and show a basic form including a grid display. Below, the state is shown in a serialized format. Note how the state is changed correctly if the values in the grid are changed. Now, add a row and again manipulate the values in the grid. If one of the previously visible values is changed, the row disappears. If one of the new fields is changed, an exception is thrown.
